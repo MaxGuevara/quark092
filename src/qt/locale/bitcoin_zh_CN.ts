@@ -2614,13 +2614,13 @@ Address: %4
 </translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>指定配置文件 (默认为 bitcoin.conf)
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>指定配置文件 (默认为 quarkcoin.conf)
 </translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>指定 pid 文件 (默认为 bitcoind.pid)
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>指定 pid 文件 (默认为 quarkd.pid)
 </translation>
     </message>
     <message>

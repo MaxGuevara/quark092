@@ -2606,12 +2606,12 @@ Address: %4
         <translation>विकल्प:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>configuraion की फाइल का विवरण दें (default: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>configuraion की फाइल का विवरण दें (default: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>pid फाइल का विवरण दें (default: bitcoin.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>pid फाइल का विवरण दें (default: quark.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

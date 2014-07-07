@@ -2610,12 +2610,12 @@ Address: %4
         <translation>ოპციები:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>მიუთითეთ საკონფიგურაციო ფაილი (ნაგულისხმევია: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>მიუთითეთ საკონფიგურაციო ფაილი (ნაგულისხმევია: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>მიუთითეთ pid ფაილი (ნაგულისხმევია: bitcoind.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>მიუთითეთ pid ფაილი (ნაგულისხმევია: quarkd.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

@@ -2605,12 +2605,12 @@ Address: %4
         <translation>Опцыі:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Вызначыць канфігурацыйны файл (зыходна: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Вызначыць канфігурацыйны файл (зыходна: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>Вызначыць pid-файл (зыходна: bitcoind.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>Вызначыць pid-файл (зыходна: quarkd.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

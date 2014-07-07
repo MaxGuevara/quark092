@@ -2609,12 +2609,12 @@ Aadress: %4⏎</translation>
         <translation>Valikud:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Täpsusta sätete fail (vaikimisi: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Täpsusta sätete fail (vaikimisi: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>Täpsusta PID fail (vaikimisi: bitcoin.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>Täpsusta PID fail (vaikimisi: quark.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

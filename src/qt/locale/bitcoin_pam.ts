@@ -2608,12 +2608,12 @@ Address: %4
         <translation>Pipamilian:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Pilinan ing configuration file(default: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Pilinan ing configuration file(default: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>Pilinan ing pid file(default: bitcoind.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>Pilinan ing pid file(default: quarkd.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

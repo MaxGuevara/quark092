@@ -2610,12 +2610,12 @@ Adresa: %4
         <translation>Setări:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Specifică fișierul de configurare (implicit: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Specifică fișierul de configurare (implicit: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>Specifică fișierul pid (implicit bitcoind.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>Specifică fișierul pid (implicit quarkd.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

@@ -2612,12 +2612,12 @@ Address: %4
         <translation>選項:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>指定設定檔(預設值: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>指定設定檔(預設值: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>指定行程識別碼(PID)檔(預設值:  bitcoind.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>指定行程識別碼(PID)檔(預設值:  quarkd.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

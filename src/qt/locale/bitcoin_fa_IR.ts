@@ -2604,12 +2604,12 @@ Address: %4
         <translation>انتخابها:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>فایل پیکربندیِ را مشخص کنید (پیش فرض: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>فایل پیکربندیِ را مشخص کنید (پیش فرض: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>فایل pid  را مشخص کنید (پیش فرض: bitcoind.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>فایل pid  را مشخص کنید (پیش فرض: quarkd.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

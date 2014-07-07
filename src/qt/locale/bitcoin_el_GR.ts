@@ -2612,12 +2612,12 @@ Address: %4
         <translation>Επιλογές:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Ορίστε αρχείο ρυθμίσεων (προεπιλογή: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Ορίστε αρχείο ρυθμίσεων (προεπιλογή: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>Ορίστε αρχείο pid (προεπιλογή: bitcoind.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>Ορίστε αρχείο pid (προεπιλογή: quarkd.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

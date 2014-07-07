@@ -2608,11 +2608,11 @@ Address: %4
         <translation>Сонголтууд:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
+        <source>Specify pid file (default: quarkd.pid)</source>
         <translation type="unfinished"/>
     </message>
     <message>

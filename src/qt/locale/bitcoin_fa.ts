@@ -2605,12 +2605,12 @@ Address: %4
         <translation>گزینه‌ها:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>مشخص کردن فایل پیکربندی (پیش‌فرض: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>مشخص کردن فایل پیکربندی (پیش‌فرض: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>مشخص کردن فایل شناسهٔ پردازش - pid - (پیش‌فرض: bitcoin.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>مشخص کردن فایل شناسهٔ پردازش - pid - (پیش‌فرض: quark.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

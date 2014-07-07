@@ -2610,12 +2610,12 @@ Alamat: %4
         <translation>Pilihan:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Tentukan berkas konfigurasi (standar: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Tentukan berkas konfigurasi (standar: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>Tentukan berkas pid (standar: bitcoind.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>Tentukan berkas pid (standar: quarkd.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

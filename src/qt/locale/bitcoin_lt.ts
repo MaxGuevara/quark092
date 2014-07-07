@@ -2608,12 +2608,12 @@ Adresas: %4</translation>
         <translation>Parinktys:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Nurodyti konfigūracijos failą (pagal nutylėjimąt: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Nurodyti konfigūracijos failą (pagal nutylėjimąt: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>Nurodyti pid failą (pagal nutylėjimą: bitcoind.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>Nurodyti pid failą (pagal nutylėjimą: quarkd.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

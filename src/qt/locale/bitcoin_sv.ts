@@ -2611,12 +2611,12 @@ Adress: %4
         <translation>Inställningar:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Ange konfigurationsfil (förvalt: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Ange konfigurationsfil (förvalt: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>Ange pid fil (förvalt: bitcoind.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>Ange pid fil (förvalt: quarkd.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

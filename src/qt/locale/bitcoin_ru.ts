@@ -2611,12 +2611,12 @@ Address: %4
         <translation>Опции:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Указать конфигурационный файл (по умолчанию: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Указать конфигурационный файл (по умолчанию: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>Задать pid-файл (по умолчанию: bitcoin.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>Задать pid-файл (по умолчанию: quark.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

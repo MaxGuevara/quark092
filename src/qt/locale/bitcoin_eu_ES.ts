@@ -2601,12 +2601,12 @@ Address: %4
         <translation>Aukerak</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Ezarpen fitxategia aukeratu (berezkoa: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Ezarpen fitxategia aukeratu (berezkoa: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>pid fitxategia aukeratu (berezkoa: bitcoind.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>pid fitxategia aukeratu (berezkoa: quarkd.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

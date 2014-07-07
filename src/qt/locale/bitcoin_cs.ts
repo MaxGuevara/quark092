@@ -2610,12 +2610,12 @@ Adresa: %4
         <translation>Možnosti:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Konfigurační soubor (výchozí: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Konfigurační soubor (výchozí: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>PID soubor (výchozí: bitcoind.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>PID soubor (výchozí: quarkd.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

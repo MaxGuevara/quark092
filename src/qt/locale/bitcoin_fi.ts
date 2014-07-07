@@ -2610,12 +2610,12 @@ Osoite: %4</translation>
         <translation>Asetukset:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Määritä asetustiedosto (oletus: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Määritä asetustiedosto (oletus: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>Määritä pid-tiedosto (oletus: bitcoin.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>Määritä pid-tiedosto (oletus: quark.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

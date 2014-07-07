@@ -2610,12 +2610,12 @@ Adresse : %4
         <translation>Options :</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Spécifier le fichier de configuration (par défaut : bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Spécifier le fichier de configuration (par défaut : quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>Spécifier le fichier PID (par défaut : bitcoind.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>Spécifier le fichier PID (par défaut : quarkd.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

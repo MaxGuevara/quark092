@@ -2616,13 +2616,13 @@ Dirección: %4</translation>
 </translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Especifica archivo de configuración (predeterminado: bitcoin.conf)
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Especifica archivo de configuración (predeterminado: quarkcoin.conf)
 </translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>Especifica archivo pid (predeterminado: bitcoin.pid)
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>Especifica archivo pid (predeterminado: quark.pid)
 </translation>
     </message>
     <message>

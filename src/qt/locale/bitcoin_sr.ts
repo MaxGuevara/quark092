@@ -2601,12 +2601,12 @@ Address: %4
         <translation>Opcije</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Potvrdi željeni konfiguracioni fajl (podrazumevani:bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Potvrdi željeni konfiguracioni fajl (podrazumevani:quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>Konkretizuj pid fajl (podrazumevani: bitcoind.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>Konkretizuj pid fajl (podrazumevani: quarkd.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

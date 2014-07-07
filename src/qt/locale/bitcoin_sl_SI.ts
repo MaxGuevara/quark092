@@ -2605,12 +2605,12 @@ Naslov: %4
         <translation>Možnosti:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Določi datoteko z nastavitvami (privzeta: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Določi datoteko z nastavitvami (privzeta: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>Določi pid datoteko (privzeta: bitcoin.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>Določi pid datoteko (privzeta: quark.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

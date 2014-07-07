@@ -2610,13 +2610,13 @@ Adres: %4
         <translation>Opties:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Specificeer configuratiebestand (standaard: bitcoin.conf)
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Specificeer configuratiebestand (standaard: quarkcoin.conf)
 </translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>Specificeer pid-bestand (standaard: bitcoind.pid)
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>Specificeer pid-bestand (standaard: quarkd.pid)
 </translation>
     </message>
     <message>

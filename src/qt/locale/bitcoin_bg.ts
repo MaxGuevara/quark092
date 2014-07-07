@@ -2606,11 +2606,11 @@ Address: %4
         <translation>Опции:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Задаване на файл с настройки (по подразбиране bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Задаване на файл с настройки (по подразбиране quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
+        <source>Specify pid file (default: quarkd.pid)</source>
         <translation type="unfinished"/>
     </message>
     <message>

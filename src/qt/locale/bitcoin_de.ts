@@ -2609,12 +2609,12 @@ Adresse: %4</translation>
         <translation>Optionen:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Konfigurationsdatei festlegen (Standard: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Konfigurationsdatei festlegen (Standard: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>PID-Datei festlegen (Standard: bitcoind.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>PID-Datei festlegen (Standard: quarkd.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

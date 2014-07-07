@@ -2611,12 +2611,12 @@ Address: %4
         <translation>オプション:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>設定ファイルの指定 (初期値: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>設定ファイルの指定 (初期値: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>pid ファイルの指定 (初期値: bitcoind.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>pid ファイルの指定 (初期値: quarkd.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

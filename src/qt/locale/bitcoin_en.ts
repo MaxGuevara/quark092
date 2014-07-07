@@ -3341,13 +3341,13 @@ Address: %4
     </message>
     <message>
         <location line="+32"/>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Specify configuration file (default: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Specify configuration file (default: quarkcoin.conf)</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>Specify pid file (default: bitcoind.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>Specify pid file (default: quarkd.pid)</translation>
     </message>
     <message>
         <location line="-1"/>

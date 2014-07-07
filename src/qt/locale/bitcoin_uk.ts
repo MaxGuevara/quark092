@@ -2610,12 +2610,12 @@ Address: %4
         <translation>Параметри:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Вкажіть файл конфігурації (типово: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Вкажіть файл конфігурації (типово: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>Вкажіть pid-файл (типово: bitcoind.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>Вкажіть pid-файл (типово: quarkd.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

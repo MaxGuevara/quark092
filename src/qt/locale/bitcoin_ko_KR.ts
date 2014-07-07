@@ -2610,12 +2610,12 @@ Address: %4
         <translation>옵션:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>설정파일 지정 (기본값: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>설정파일 지정 (기본값: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>pid 파일 지정 (기본값: bitcoind.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>pid 파일 지정 (기본값: quarkd.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

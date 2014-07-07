@@ -2610,12 +2610,12 @@ Adrese: %4
         <translation>Iespējas:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Norādiet konfigurācijas failu (pēc noklusēšanas: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Norādiet konfigurācijas failu (pēc noklusēšanas: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>Norādiet pid failu (pēc noklusēšanas: bitcoind.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>Norādiet pid failu (pēc noklusēšanas: quarkd.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

@@ -2609,12 +2609,12 @@ Adresa: %4</translation>
         <translation>Možnosti:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Určiť súbor s nastaveniami (predvolené: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Určiť súbor s nastaveniami (predvolené: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>Určiť súbor pid (predvolené: bitcoind.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>Určiť súbor pid (predvolené: quarkd.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

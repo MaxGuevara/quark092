@@ -2610,12 +2610,12 @@ Adresse: %4
         <translation>Indstillinger:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Angiv konfigurationsfil (standard: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Angiv konfigurationsfil (standard: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>Angiv pid-fil (default: bitcoind.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>Angiv pid-fil (default: quarkd.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

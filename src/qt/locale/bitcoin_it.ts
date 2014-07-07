@@ -2612,12 +2612,12 @@ Più URL vengono separati da una barra verticale |.</translation>
         <translation>Opzioni:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Specifica il file di configurazione (predefinito: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Specifica il file di configurazione (predefinito: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>Specifica il file pid (predefinito: bitcoind.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>Specifica il file pid (predefinito: quarkd.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

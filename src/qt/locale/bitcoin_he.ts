@@ -2609,12 +2609,12 @@ Address: %4
         <translation>אפשרויות:</translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>ציין קובץ הגדרות (ברירת מחדל: bitcoin.conf)</translation>
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>ציין קובץ הגדרות (ברירת מחדל: quarkcoin.conf)</translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>ציין קובץ pid (ברירת מחדל: bitcoind.pid)</translation>
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>ציין קובץ pid (ברירת מחדל: quarkd.pid)</translation>
     </message>
     <message>
         <source>Specify data directory</source>

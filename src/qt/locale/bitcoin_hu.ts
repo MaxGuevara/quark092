@@ -2614,13 +2614,13 @@ Cím: %4
 </translation>
     </message>
     <message>
-        <source>Specify configuration file (default: bitcoin.conf)</source>
-        <translation>Konfigurációs fájl (alapértelmezett: bitcoin.conf)
+        <source>Specify configuration file (default: quarkcoin.conf)</source>
+        <translation>Konfigurációs fájl (alapértelmezett: quarkcoin.conf)
 </translation>
     </message>
     <message>
-        <source>Specify pid file (default: bitcoind.pid)</source>
-        <translation>pid-fájl (alapértelmezett: bitcoind.pid)
+        <source>Specify pid file (default: quarkd.pid)</source>
+        <translation>pid-fájl (alapértelmezett: quarkd.pid)
 </translation>
     </message>
     <message>
