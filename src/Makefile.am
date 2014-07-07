@@ -41,6 +41,14 @@ BITCOIN_CORE_H = \
   crypter.h \
   db.h \
   hash.h \
+  hashblock.h \
+  sph_types.h \
+  sph_blake.h \
+  sph_bmw.h \
+  sph_groestl.h \
+  sph_jh.h \
+  sph_keccak.h \
+  sph_skein.h \
   init.h \
   key.h \
   keystore.h \
@@ -126,6 +134,12 @@ libbitcoin_common_a_SOURCES = \
   chainparams.cpp \
   core.cpp \
   hash.cpp \
+  blake.c \
+  bmw.c \
+  groestl.c \
+  jh.c \
+  keccak.c \
+  skein.c \
   key.cpp \
   netbase.cpp \
   protocol.cpp \
