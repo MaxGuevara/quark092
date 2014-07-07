@@ -47,7 +47,7 @@
 using namespace boost;
 
 const int BITCOIN_IPC_CONNECT_TIMEOUT = 1000; // milliseconds
-const QString BITCOIN_IPC_PREFIX("bitcoin:");
+const QString BITCOIN_IPC_PREFIX("quark:");
 const char* BITCOIN_REQUEST_MIMETYPE = "application/bitcoin-paymentrequest";
 const char* BITCOIN_PAYMENTACK_MIMETYPE = "application/bitcoin-paymentack";
 const char* BITCOIN_PAYMENTACK_CONTENTTYPE = "application/bitcoin-payment";
@@ -69,7 +69,7 @@ void PaymentServer::freeCertStore()
 //
 static QString ipcServerName()
 {
-    QString name("BitcoinQt");
+    QString name("QuarkQt");
 
     // Append a simple hash of the datadir
     // Note that GetDataDir(true) returns a different path
@@ -186,7 +186,7 @@ bool PaymentServer::ipcParseCommandLine(int argc, char* argv[])
         if (arg.startsWith("-"))
             continue;
 
-        if (arg.startsWith(BITCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // bitcoin: URI
+        if (arg.startsWith(BITCOIN_IPC_PREFIX, Qt::CaseInsensitive)) // quark: URI
         {
             savedPaymentRequests.append(arg);
 
