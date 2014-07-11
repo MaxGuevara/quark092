@@ -1178,24 +1178,34 @@ void static PruneOrphanBlocks()
     mapOrphanBlocks.erase(hash);
 }
 
+static const int64_t nGenesisBlockRewardCoin = 1 * COIN;
+static const int64_t nBlockRewardStartCoin = 2048 * COIN;
+static const int64_t nBlockRewardMinimumCoin = 1 * COIN;
+
+static const int64_t nTargetTimespan = 10 * 60; // 10 minutes
+static const int64_t nTargetSpacing = 30; // 30 seconds
+static const int64_t nInterval = nTargetTimespan / nTargetSpacing; // 20 blocks
+
 int64_t GetBlockValue(int nHeight, int64_t nFees)
 {
-    int64_t nSubsidy = 50 * COIN;
-    int halvings = nHeight / Params().SubsidyHalvingInterval();
+    if (nHeight == 0)
+    {
+        return nGenesisBlockRewardCoin;
+    }
+    
+    int64_t nSubsidy = nBlockRewardStartCoin;
 
-    // Force block reward to zero when right shift is undefined.
-    if (halvings >= 64)
-        return nFees;
-
-    // Subsidy is cut in half every 210,000 blocks which will occur approximately every 4 years.
-    nSubsidy >>= halvings;
+    // Subsidy is cut in half every 60480 blocks (21 days)
+    nSubsidy >>= (nHeight / 60480);
+    
+    // Minimum subsidy
+    if (nSubsidy < nBlockRewardMinimumCoin)
+    {
+        nSubsidy = nBlockRewardMinimumCoin;
+    }
 
     return nSubsidy + nFees;
 }
-
-static const int64_t nTargetTimespan = 14 * 24 * 60 * 60; // two weeks
-static const int64_t nTargetSpacing = 10 * 60;
-static const int64_t nInterval = nTargetTimespan / nTargetSpacing;
 
 //
 // minimum amount of work that could possibly be required nTime after
@@ -1213,10 +1223,10 @@ unsigned int ComputeMinWork(unsigned int nBase, int64_t nTime)
     bnResult.SetCompact(nBase);
     while (nTime > 0 && bnResult < bnLimit)
     {
-        // Maximum 400% adjustment...
-        bnResult *= 4;
-        // ... in best-case exactly 4-times-normal target time
-        nTime -= nTargetTimespan*4;
+        // Maximum 200% adjustment...
+        bnResult *= 2;
+        // ... per timespan
+        nTime -= nTargetTimespan;
     }
     if (bnResult > bnLimit)
         bnResult = bnLimit;
@@ -1253,7 +1263,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         return pindexLast->nBits;
     }
 
-    // Go back by what we want to be 14 days worth of blocks
+    // Go back by what we want to be nInterval blocks 
     const CBlockIndex* pindexFirst = pindexLast;
     for (int i = 0; pindexFirst && i < nInterval-1; i++)
         pindexFirst = pindexFirst->pprev;
@@ -1261,11 +1271,13 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
 
     // Limit adjustment step
     int64_t nActualTimespan = pindexLast->GetBlockTime() - pindexFirst->GetBlockTime();
-    LogPrintf("  nActualTimespan = %d  before bounds\n", nActualTimespan);
-    if (nActualTimespan < nTargetTimespan/4)
-        nActualTimespan = nTargetTimespan/4;
-    if (nActualTimespan > nTargetTimespan*4)
-        nActualTimespan = nTargetTimespan*4;
+    LogPrintf("  nActualTimespan = %d before bounds\n", nActualTimespan);
+    int64_t LimUp = nTargetTimespan * 100 / 110; // 110% up
+    int64_t LimDown = nTargetTimespan * 2; // 200% down
+    if (nActualTimespan < LimUp)
+        nActualTimespan = LimUp;
+    if (nActualTimespan > LimDown)
+        nActualTimespan = LimDown;
 
     // Retarget
     CBigNum bnNew;
