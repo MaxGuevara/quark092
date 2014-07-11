@@ -15,7 +15,7 @@
 class CTransaction;
 
 /** No amount larger than this (in satoshi) is valid */
-static const int64_t MAX_MONEY = 21000000 * COIN;
+static const int64_t MAX_MONEY = 500000000 * COIN; // ~250 million + ~1 million pa (inflation) 
 inline bool MoneyRange(int64_t nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
 
 /** An outpoint - a combination of a transaction hash and an index n into its vout */
@@ -185,11 +185,13 @@ class CTransaction
 public:
     static int64_t nMinTxFee;
     static int64_t nMinRelayTxFee;
-    static const int CURRENT_VERSION=1;
+    static const int CURRENT_VERSION = 1;
+    static const int TXCOMMENT_VERSION = 2;
     int nVersion;
     std::vector<CTxIn> vin;
     std::vector<CTxOut> vout;
     unsigned int nLockTime;
+    std::string strTxComment;
 
     CTransaction()
     {
@@ -203,6 +205,8 @@ public:
         READWRITE(vin);
         READWRITE(vout);
         READWRITE(nLockTime);
+        if(this->nVersion >= TXCOMMENT_VERSION) { 
+        READWRITE(strTxComment); }
     )
 
     void SetNull()
@@ -211,6 +215,7 @@ public:
         vin.clear();
         vout.clear();
         nLockTime = 0;
+        strTxComment.clear();
     }
 
     bool IsNull() const
