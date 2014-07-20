@@ -278,6 +278,7 @@ namespace Checkpoints
                 if (!ReadBlockFromDisk(block, pindexCheckpoint))
                     return error("AcceptPendingSyncCheckpoint: ReadFromDisk failed for sync checkpoint %s", hashPendingCheckpoint.ToString().c_str());
                 CValidationState state;
+                LogPrintf("AcceptPendingSyncCheckpoint: ConnectTip\n");
                 // if (!SetBestChain(state, pindexCheckpoint))
                 if (!ConnectTip(state, pindexCheckpoint))
                 {
@@ -375,6 +376,7 @@ namespace Checkpoints
             if (!ReadBlockFromDisk(block, mapBlockIndex[hash]))
                 return error("ResetSyncCheckpoint: ReadFromDisk failed for hardened checkpoint %s", hash.ToString().c_str());
             CValidationState state;
+            LogPrintf("ResetSyncCheckpoint: ConnectTip\n");
             // if (!SetBestChain(state, mapBlockIndex[hash]))
             if (!ConnectTip(state, mapBlockIndex[hash]))
             {
@@ -570,6 +572,7 @@ bool CSyncCheckpoint::ProcessSyncCheckpoint(CNode* pfrom)
         if (!ReadBlockFromDisk(block, pindexCheckpoint))
             return error("ProcessSyncCheckpoint: ReadFromDisk failed for sync checkpoint %s", hashCheckpoint.ToString().c_str());
         CValidationState state;
+        LogPrintf("ProcessSyncCheckpoint: ConnectTip\n");
         // if (!SetBestChain(state, pindexCheckpoint))
         if (!ConnectTip(state, pindexCheckpoint))
         {

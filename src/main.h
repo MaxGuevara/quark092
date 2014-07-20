@@ -819,7 +819,7 @@ public:
 
     bool IsInMainChain() const
     {
-        return ((nStatus && BLOCK_VALID_MASK) >= BLOCK_VALID_CHAIN);
+        return ((nStatus & BLOCK_VALID_MASK) >= BLOCK_VALID_CHAIN);
     }
 	
     CBigNum GetBlockWork() const
