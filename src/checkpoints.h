@@ -6,9 +6,48 @@
 #define BITCOIN_CHECKPOINT_H
 
 #include <map>
+#include "uint256.h"
+#include "util.h"
 
 class CBlockIndex;
 class uint256;
+
+// ppcoin: synchronized checkpoint
+class CUnsignedSyncCheckpoint
+{
+public:
+    int nVersion;
+    uint256 hashCheckpoint;      // checkpoint block
+
+    IMPLEMENT_SERIALIZE
+    (
+        READWRITE(this->nVersion);
+        nVersion = this->nVersion;
+        READWRITE(hashCheckpoint);
+    )
+
+    void SetNull()
+    {
+        nVersion = 1;
+        hashCheckpoint = 0;
+    }
+
+    std::string ToString() const
+    {
+        return strprintf(
+                "CSyncCheckpoint(\n"
+                "    nVersion       = %d\n"
+                "    hashCheckpoint = %s\n"
+                ")\n",
+            nVersion,
+            hashCheckpoint.ToString().c_str());
+    }
+
+    void print() const
+    {
+        LogPrintf("%s", ToString().c_str());
+    }
+};
 
 /** Block-chain checkpoints are compiled-in sanity checks.
  * They are updated every release or three.
