@@ -347,7 +347,6 @@ namespace Checkpoints
         return true;
     }
     
-	/*
     bool WantedByPendingSyncCheckpoint(uint256 hashBlock)
     {
         LOCK(cs_hashSyncCheckpoint);
@@ -355,12 +354,11 @@ namespace Checkpoints
             return false;
         if (hashBlock == hashPendingCheckpoint)
             return true;
-        if (mapOrphanBlocks.count(hashPendingCheckpoint)
-            && hashBlock == WantedByOrphan(mapOrphanBlocks[hashPendingCheckpoint]))
+        if (mapOrphanBlocksSyncCheckpoint.count(hashPendingCheckpoint)
+            && hashBlock == WantedByOrphan(mapOrphanBlocksSyncCheckpoint[hashPendingCheckpoint]))
             return true;
         return false;
     }
-	*/
 
 	/*
     // ppcoin: reset synchronized checkpoint to last hardened checkpoint
@@ -398,14 +396,12 @@ namespace Checkpoints
     }
 	*/
 
-	/*
     void AskForPendingSyncCheckpoint(CNode* pfrom)
     {
         LOCK(cs_hashSyncCheckpoint);
-        if (pfrom && hashPendingCheckpoint != 0 && (!mapBlockIndex.count(hashPendingCheckpoint)) && (!mapOrphanBlocks.count(hashPendingCheckpoint)))
+        if (pfrom && hashPendingCheckpoint != 0 && (!mapBlockIndex.count(hashPendingCheckpoint)) && (!mapOrphanBlocksSyncCheckpoint.count(hashPendingCheckpoint)))
             pfrom->AskFor(CInv(MSG_BLOCK, hashPendingCheckpoint));
     }
-	*/
     
 	/*
     // Verify sync checkpoint master pubkey and reset sync checkpoint if changed
@@ -512,16 +508,14 @@ namespace Checkpoints
         return (pindexSync->GetBlockTime() + nSeconds < GetAdjustedTime());
     }
 
-	/*
     // ppcoin: find block wanted by given orphan block
     uint256 WantedByOrphan(const CBlock* pblockOrphan)
     {
         // Work back to the first block in the orphan chain
-        while (mapOrphanBlocks.count(pblockOrphan->hashPrevBlock))
-            pblockOrphan = mapOrphanBlocks[pblockOrphan->hashPrevBlock];
+        while (mapOrphanBlocksSyncCheckpoint.count(pblockOrphan->hashPrevBlock))
+            pblockOrphan = mapOrphanBlocksSyncCheckpoint[pblockOrphan->hashPrevBlock];
         return pblockOrphan->hashPrevBlock;
     }
-	*/
 
 }
 
