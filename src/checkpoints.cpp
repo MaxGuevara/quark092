@@ -8,6 +8,7 @@
 #include "uint256.h"
 #include "key.h"
 #include "txdb.h"
+#include "base58.h"
 
 #include <stdint.h>
 
@@ -463,10 +464,11 @@ namespace Checkpoints
         CBitcoinSecret vchSecret;
         if (!vchSecret.SetString(CSyncCheckpoint::strMasterPrivKey))
             return error("SendSyncCheckpoint: Checkpoint master key invalid");
-        CKey key;
-        bool fCompressed;
-        CSecret secret = vchSecret.GetSecret(fCompressed);
-        key.SetSecret(secret, fCompressed); // if key is not correct openssl may crash
+        // bool fCompressed;
+        // CSecret secret = vchSecret.GetSecret(fCompressed);
+        CKey secret = vchSecret.GetKey();
+        // key.SetSecret(secret, fCompressed); // if key is not correct openssl may crash
+        CKey key(secret);
         if (!key.Sign(Hash(checkpoint.vchMsg.begin(), checkpoint.vchMsg.end()), checkpoint.vchSig))
             return error("SendSyncCheckpoint: Unable to sign checkpoint, check private key?");
 
@@ -541,7 +543,6 @@ bool CSyncCheckpoint::CheckSignature()
 }
 
 /*
- 
 // ppcoin: process synchronized checkpoint
 bool CSyncCheckpoint::ProcessSyncCheckpoint(CNode* pfrom)
 {   
@@ -561,7 +562,7 @@ bool CSyncCheckpoint::ProcessSyncCheckpoint(CNode* pfrom)
             pfrom->PushGetBlocks(pindexBest, hashCheckpoint);
             // ask directly as well in case rejected earlier by duplicate
             // proof-of-stake because getblocks may not get it this time
-            pfrom->AskFor(CInv(MSG_BLOCK, mapOrphanBlocks.count(hashCheckpoint)? Checkpoints::WantedByOrphan(mapOrphanBlocks[hashCheckpoint]) : hashCheckpoint));
+            pfrom->AskFor(CInv(MSG_BLOCK, mapOrphanBlocksSyncCheckpoint.count(hashCheckpoint)? Checkpoints::WantedByOrphan(mapOrphanBlocksSyncCheckpoint[hashCheckpoint]) : hashCheckpoint));
         }
         return false;
     }
@@ -574,7 +575,7 @@ bool CSyncCheckpoint::ProcessSyncCheckpoint(CNode* pfrom)
     {
         // checkpoint chain received but not yet main chain
         CBlock block;
-        if (!block.ReadFromDisk(pindexCheckpoint))
+        if (!ReadBlockFromDisk(block, pindexCheckpoint))
             return error("ProcessSyncCheckpoint: ReadFromDisk failed for sync checkpoint %s", hashCheckpoint.ToString().c_str());
         CValidationState state;
         if (!SetBestChain(state, pindexCheckpoint))
@@ -593,5 +594,4 @@ bool CSyncCheckpoint::ProcessSyncCheckpoint(CNode* pfrom)
     LogPrintf("ProcessSyncCheckpoint: sync-checkpoint at %s\n", hashCheckpoint.ToString().c_str());
     return true;
 }
-
 */
