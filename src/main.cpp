@@ -2039,6 +2039,16 @@ bool ConnectTip(CValidationState &state, CBlockIndex *pindexNew) {
     BOOST_FOREACH(const CTransaction &tx, block.vtx) {
         SyncWithWallets(tx.GetHash(), tx, &block);
     }
+    
+    if (!Checkpoints::IsSyncCheckpointEnforced()) // checkpoint advisory mode
+    {
+        //if (pindexBest->pprev && !Checkpoints::CheckSyncCheckpoint(pindexBest->GetBlockHash(), pindexBest->pprev))
+        if (chainActive.Tip()->pprev && !Checkpoints::CheckSyncCheckpoint(chainActive.Tip()->GetBlockHash(), chainActive.Tip()->pprev))
+            Checkpoints::strCheckpointWarning = _("Warning: checkpoint on different blockchain fork, contact developers to resolve the issue");
+        else
+            Checkpoints::strCheckpointWarning = "";
+    }
+    
     return true;
 }
 
@@ -2402,6 +2412,11 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CDiskBlockPos* dbp)
             return state.DoS(100, error("AcceptBlock() : rejected by checkpoint lock-in at %d", nHeight),
                              REJECT_CHECKPOINT, "checkpoint mismatch");
 
+        // ppcoin: check that the block satisfies synchronized checkpoint
+        if (Checkpoints::IsSyncCheckpointEnforced() // checkpoint enforce mode
+           && !Checkpoints::CheckSyncCheckpoint(hash, pindexPrev))
+            return error("AcceptBlock() : rejected by synchronized checkpoint");
+            
         // Don't accept any forks from the main chain prior to last checkpoint
         CBlockIndex* pcheckpoint = Checkpoints::GetLastCheckpoint(mapBlockIndex);
         if (pcheckpoint && nHeight < pcheckpoint->nHeight)
@@ -2460,6 +2475,9 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CDiskBlockPos* dbp)
                 pnode->PushInventory(CInv(MSG_BLOCK, hash));
     }
 
+    // ppcoin: check pending sync-checkpoint
+    Checkpoints::AcceptPendingSyncCheckpoint();
+    
     return true;
 }
 
@@ -4050,6 +4068,21 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv)
         pfrom->fRelayTxes = true;
     }
 
+
+    else if (strCommand == "checkpoint") // ppcoin synchronized checkpoint
+    {
+        CSyncCheckpoint checkpoint;
+        vRecv >> checkpoint;
+
+        if (checkpoint.ProcessSyncCheckpoint(pfrom))
+        {
+            // Relay
+            pfrom->hashCheckpointKnown = checkpoint.hashCheckpoint;
+            LOCK(cs_vNodes);
+            BOOST_FOREACH(CNode* pnode, vNodes)
+                checkpoint.RelayTo(pnode);
+        }
+    }
 
     else if (strCommand == "reject")
     {

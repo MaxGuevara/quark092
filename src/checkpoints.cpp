@@ -319,7 +319,7 @@ namespace Checkpoints
     bool CheckSyncCheckpoint(const uint256& hashBlock, const CBlockIndex* pindexPrev)
     {
         int nHeight = pindexPrev->nHeight + 1;
-        printf("CheckSyncCheckpoint: nHeight=%d, hashSyncCheckpoint=%s\n", nHeight, hashSyncCheckpoint.ToString().c_str());
+        LogPrintf("CheckSyncCheckpoint: nHeight=%d, hashSyncCheckpoint=%s\n", nHeight, hashSyncCheckpoint.ToString().c_str());
 
         LOCK(cs_hashSyncCheckpoint);
         
