@@ -1995,7 +1995,7 @@ bool static DisconnectTip(CValidationState &state) {
 }
 
 // Connect a new block to chainActive.
-bool static ConnectTip(CValidationState &state, CBlockIndex *pindexNew) {
+bool ConnectTip(CValidationState &state, CBlockIndex *pindexNew) {
     assert(pindexNew->pprev == chainActive.Tip());
     mempool.check(pcoinsTip);
     // Read block from disk.

@@ -101,7 +101,7 @@ public:
     }
 
     bool CheckSignature();
-//    bool ProcessSyncCheckpoint(CNode* pfrom);
+    bool ProcessSyncCheckpoint(CNode* pfrom);
 };
 
 /** Block-chain checkpoints are compiled-in sanity checks.
@@ -124,11 +124,10 @@ namespace Checkpoints
 
     bool WriteSyncCheckpoint(const uint256& hashCheckpoint);
     bool IsSyncCheckpointEnforced();
-//    bool AcceptPendingSyncCheckpoint();
-//    uint256 AutoSelectSyncCheckpoint();
+    bool AcceptPendingSyncCheckpoint();
+    uint256 AutoSelectSyncCheckpoint();
     bool CheckSyncCheckpoint(const uint256& hashBlock, const CBlockIndex* pindexPrev);
     bool WantedByPendingSyncCheckpoint(uint256 hashBlock);
-/*
     bool ResetSyncCheckpoint();
     void AskForPendingSyncCheckpoint(CNode* pfrom);
     bool CheckCheckpointPubKey();
@@ -136,7 +135,7 @@ namespace Checkpoints
     bool SendSyncCheckpoint(uint256 hashCheckpoint);
     bool IsMatureSyncCheckpoint();
     bool IsSyncCheckpointTooOld(unsigned int nSeconds);
-*/
+	
     uint256 WantedByOrphan(const CBlock* pblockOrphan);
 	
 }

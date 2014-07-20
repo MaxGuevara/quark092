@@ -611,6 +611,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, bool fCheckPOW = t
 // if dbp is provided, the file is known to already reside on disk
 bool AcceptBlock(CBlock& block, CValidationState& state, CDiskBlockPos* dbp = NULL);
 
+bool ConnectTip(CValidationState &state, CBlockIndex *pindexNew);
 
 
 class CBlockFileInfo
@@ -816,6 +817,11 @@ public:
         return (int64_t)nTime;
     }
 
+    bool IsInMainChain() const
+    {
+        return ((nStatus && BLOCK_VALID_MASK) >= BLOCK_VALID_CHAIN);
+    }
+	
     CBigNum GetBlockWork() const
     {
         CBigNum bnTarget;
