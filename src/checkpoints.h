@@ -8,6 +8,7 @@
 #include <map>
 #include "uint256.h"
 #include "util.h"
+#include "net.h"
 
 class CBlockIndex;
 class uint256;
@@ -49,6 +50,60 @@ public:
     }
 };
 
+class CSyncCheckpoint : public CUnsignedSyncCheckpoint
+{
+public:
+    static const std::string strMainPubKey;
+    static const std::string strTestPubKey;
+    static std::string strMasterPrivKey;
+
+    std::vector<unsigned char> vchMsg;
+    std::vector<unsigned char> vchSig;
+
+    CSyncCheckpoint()
+    {
+        SetNull();
+    }
+
+    IMPLEMENT_SERIALIZE
+    (
+        READWRITE(vchMsg);
+        READWRITE(vchSig);
+    )
+
+    void SetNull()
+    {
+        CUnsignedSyncCheckpoint::SetNull();
+        vchMsg.clear();
+        vchSig.clear();
+    }
+
+    bool IsNull() const
+    {
+        return (hashCheckpoint == 0);
+    }
+
+    uint256 GetHash() const
+    {
+        return Hash(this->vchMsg.begin(), this->vchMsg.end());
+    }
+
+    bool RelayTo(CNode* pnode) const
+    {
+        // returns true if wasn't already sent
+        if (pnode->hashCheckpointKnown != hashCheckpoint)
+        {
+            pnode->hashCheckpointKnown = hashCheckpoint;
+            pnode->PushMessage("checkpoint", *this);
+            return true;
+        }
+        return false;
+    }
+
+    bool CheckSignature();
+//    bool ProcessSyncCheckpoint(CNode* pfrom);
+};
+
 /** Block-chain checkpoints are compiled-in sanity checks.
  * They are updated every release or three.
  */
@@ -66,6 +121,24 @@ namespace Checkpoints
     double GuessVerificationProgress(CBlockIndex *pindex, bool fSigchecks = true);
 
     extern bool fEnabled;
+
+    bool WriteSyncCheckpoint(const uint256& hashCheckpoint);
+    bool IsSyncCheckpointEnforced();
+//    bool AcceptPendingSyncCheckpoint();
+//    uint256 AutoSelectSyncCheckpoint();
+    bool CheckSyncCheckpoint(const uint256& hashBlock, const CBlockIndex* pindexPrev);
+/*
+    bool WantedByPendingSyncCheckpoint(uint256 hashBlock);
+    bool ResetSyncCheckpoint();
+    void AskForPendingSyncCheckpoint(CNode* pfrom);
+    bool CheckCheckpointPubKey();
+    bool SetCheckpointPrivKey(std::string strPrivKey);
+    bool SendSyncCheckpoint(uint256 hashCheckpoint);
+    bool IsMatureSyncCheckpoint();
+    bool IsSyncCheckpointTooOld(unsigned int nSeconds);
+    uint256 WantedByOrphan(const CBlock* pblockOrphan);
+*/
+	
 }
 
 #endif
