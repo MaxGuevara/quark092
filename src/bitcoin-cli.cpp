@@ -44,9 +44,9 @@ static bool AppInitRPC(int argc, char* argv[])
         // First part of help message is specific to RPC client
         std::string strUsage = _("Quark Core RPC client version") + " " + FormatFullVersion() + "\n\n" +
             _("Usage:") + "\n" +
-              "  bitcoin-cli [options] <command> [params]  " + _("Send command to Quark Core") + "\n" +
-              "  bitcoin-cli [options] help                " + _("List commands") + "\n" +
-              "  bitcoin-cli [options] help <command>      " + _("Get help for a command") + "\n";
+              "  quark-cli [options] <command> [params]  " + _("Send command to Quark Core") + "\n" +
+              "  quark-cli [options] help                " + _("List commands") + "\n" +
+              "  quark-cli [options] help <command>      " + _("Get help for a command") + "\n";
 
         strUsage += "\n" + HelpMessageCli(true);
 
