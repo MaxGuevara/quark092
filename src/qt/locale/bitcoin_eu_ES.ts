@@ -1352,8 +1352,8 @@ Address: %4
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Enter a Quark address (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
-        <translation>Sartu Bitocin helbide bat (adb.: 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L) </translation>
+        <source>Enter a Quark address (e.g. QfgBvXopUwn3KtDnW4HHqX2L7KD37TigXS)</source>
+        <translation>Sartu Bitocin helbide bat (adb.: QfgBvXopUwn3KtDnW4HHqX2L7KD37TigXS) </translation>
     </message>
 </context>
 <context>
@@ -1897,7 +1897,7 @@ Address: %4
         <translation>Ordaindu &amp;honi:</translation>
     </message>
     <message>
-        <source>The address to send the payment to (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
+        <source>The address to send the payment to (e.g. QfgBvXopUwn3KtDnW4HHqX2L7KD37TigXS)</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -1987,7 +1987,7 @@ Address: %4
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>The address to sign the message with (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
+        <source>The address to sign the message with (e.g. QfgBvXopUwn3KtDnW4HHqX2L7KD37TigXS)</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2043,7 +2043,7 @@ Address: %4
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>The address the message was signed with (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
+        <source>The address the message was signed with (e.g. QfgBvXopUwn3KtDnW4HHqX2L7KD37TigXS)</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2059,8 +2059,8 @@ Address: %4
         <translation type="unfinished"/>
     </message>
     <message>
-        <source>Enter a Quark address (e.g. 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L)</source>
-        <translation>Sartu Bitocin helbide bat (adb.: 1NS17iag9jJgTHD1VXjvLCEnZuQ3rJDE9L) </translation>
+        <source>Enter a Quark address (e.g. QfgBvXopUwn3KtDnW4HHqX2L7KD37TigXS)</source>
+        <translation>Sartu Bitocin helbide bat (adb.: QfgBvXopUwn3KtDnW4HHqX2L7KD37TigXS) </translation>
     </message>
     <message>
         <source>Click &quot;Sign Message&quot; to generate signature</source>
