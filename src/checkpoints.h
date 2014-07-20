@@ -117,11 +117,18 @@ namespace Checkpoints
 
     // Returns last CBlockIndex* in mapBlockIndex that is a checkpoint
     CBlockIndex* GetLastCheckpoint(const std::map<uint256, CBlockIndex*>& mapBlockIndex);
-
+	
     double GuessVerificationProgress(CBlockIndex *pindex, bool fSigchecks = true);
 
     extern bool fEnabled;
 
+    // ppcoin: synchronized checkpoint
+    extern uint256 hashSyncCheckpoint;
+    extern CSyncCheckpoint checkpointMessage;
+    extern uint256 hashInvalidCheckpoint;
+    extern CCriticalSection cs_hashSyncCheckpoint;
+    extern std::string strCheckpointWarning;
+	
     bool WriteSyncCheckpoint(const uint256& hashCheckpoint);
     bool IsSyncCheckpointEnforced();
     bool AcceptPendingSyncCheckpoint();
