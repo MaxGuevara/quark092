@@ -3025,11 +3025,11 @@ bool InitBlockIndex() {
             if (!AddToBlockIndex(block, state, blockPos))
                 return error("LoadBlockIndex() : genesis block not accepted");
             // ppcoin: initialize synchronized checkpoint
-            printf("InitBlockIndex\n");
+            LogPrintf("InitBlockIndex\n");
             if (!Checkpoints::WriteSyncCheckpoint(Params().HashGenesisBlock()))
                 return error("LoadBlockIndex() : failed to init sync checkpoint");
 			// ppcoin: if checkpoint master key changed must reset sync-checkpoint
-			printf("InitBlockIndex_CheckCheckpointPubKey\n");
+			LogPrintf("InitBlockIndex_CheckCheckpointPubKey\n");
 			if (!Checkpoints::CheckCheckpointPubKey())
 				return error("LoadBlockIndex() : failed to reset checkpoint master pubkey");
         } catch(std::runtime_error &e) {
