@@ -1066,6 +1066,9 @@ public:
              SerializeOutput(s, nOutput, nType, nVersion);
         // Serialie nLockTime
         ::Serialize(s, txTo.nLockTime, nType, nVersion);
+        // Serialize strTxComment
+        if(txTo.nVersion >= CTransaction::TXCOMMENT_VERSION) { 
+        ::Serialize(s, txTo.strTxComment, nType, nVersion); }        
     }
 };
 }
