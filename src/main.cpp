@@ -1200,7 +1200,7 @@ int64_t GetBlockValue(int nHeight, int64_t nFees)
     int64_t nSubsidy = nBlockRewardStartCoin;
 
     // Subsidy is cut in half every 60480 blocks (21 days)
-    nSubsidy >>= (nHeight / 60480);
+    nSubsidy >>= min((nHeight / 60480), 63);
     
     // Minimum subsidy
     if (nSubsidy < nBlockRewardMinimumCoin)
