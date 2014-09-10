@@ -42,6 +42,8 @@ public:
         ThreadsScriptVerif,     // int
         DatabaseCache,          // int
         SpendZeroConfChange,    // bool
+        MiningEnabled,          // bool
+        MiningIntensity,        // int
         OptionIDRowCount,
     };
 
@@ -75,6 +77,8 @@ private:
     bool bDisplayAddresses;
     QString strThirdPartyTxUrls;
     bool fCoinControlFeatures;
+    bool bMiningEnabled;
+    int nMiningIntensity;
     /* settings that were overriden by command-line */
     QString strOverriddenByCommandLine;
 

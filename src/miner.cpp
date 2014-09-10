@@ -8,6 +8,7 @@
 #include "core.h"
 #include "main.h"
 #include "net.h"
+#include "checkpoints.h"
 #ifdef ENABLE_WALLET
 #include "wallet.h"
 #endif
@@ -486,6 +487,13 @@ void static BitcoinMiner(CWallet *pwallet)
             // on an obsolete chain. In regtest mode we expect to fly solo.
             while (vNodes.empty())
                 MilliSleep(1000);
+        }
+        
+        // wait for chain to download
+        while (chainActive.Tip()->nHeight + 1000 < Checkpoints::GetTotalBlocksEstimate())
+        {
+            boost::this_thread::interruption_point();
+            MilliSleep(50);
         }
 
         //

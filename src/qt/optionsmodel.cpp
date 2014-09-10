@@ -13,6 +13,7 @@
 
 #include "init.h"
 #include "main.h"
+#include "miner.h"
 #include "net.h"
 #include "txdb.h" // for -dbcache defaults
 #ifdef ENABLE_WALLET
@@ -33,6 +34,19 @@ OptionsModel::OptionsModel(QObject *parent) :
 void OptionsModel::addOverriddenOption(const std::string &option)
 {
     strOverriddenByCommandLine += QString::fromStdString(option) + "=" + QString::fromStdString(mapArgs[option]) + " ";
+}
+
+void static ApplyMiningSettings()
+{
+    QSettings settings;
+    if (settings.contains("bMiningEnabled"))
+        SetBoolArg("-gen", settings.value("bMiningEnabled").toBool());
+    if (settings.contains("nMiningIntensity"))
+        SetArg("-genproclimit", settings.value("nMiningIntensity").toString().toStdString());
+    // stop
+    GenerateBitcoins(false, NULL, -1);
+    // start
+    GenerateBitcoins(GetBoolArg("-gen", false), pwalletMain, GetArg("-genproclimit", -1));
 }
 
 // Writes all missing QSettings with their default values
@@ -127,6 +141,17 @@ void OptionsModel::Init()
     if (settings.value("fUseProxy").toBool() && !SoftSetArg("-socks", settings.value("nSocksVersion").toString().toStdString()))
         addOverriddenOption("-socks");
 
+    // Mining disabled by default in QT if not overriden 
+    // by command-line options
+    if (settings.contains("bMiningEnabled"))
+        SoftSetBoolArg("-gen", settings.value("bMiningEnabled").toBool());
+    else
+        SoftSetBoolArg("-gen", false);
+    if (settings.contains("nMiningIntensity"))
+        SoftSetArg("-genproclimit", settings.value("nMiningIntensity").toString().toStdString());
+    else
+        SoftSetArg("-genproclimit", "0");
+        
     // Display
     if (!settings.contains("language"))
         settings.setValue("language", "");
@@ -217,6 +242,13 @@ QVariant OptionsModel::data(const QModelIndex & index, int role) const
             return settings.value("nDatabaseCache");
         case ThreadsScriptVerif:
             return settings.value("nThreadsScriptVerif");
+        case MiningEnabled:
+            return settings.value("bMiningEnabled", GetBoolArg("-gen", false));
+        case MiningIntensity:
+        {
+            int lim = GetArg("-genproclimit", 0);
+            return settings.value("nMiningIntensity", lim);
+        }
         default:
             return QVariant();
         }
@@ -339,6 +371,16 @@ bool OptionsModel::setData(const QModelIndex & index, const QVariant & value, in
                 settings.setValue("nThreadsScriptVerif", value);
                 setRestartRequired(true);
             }
+            break;
+        case MiningEnabled:
+            bMiningEnabled = value.toBool();
+            settings.setValue("bMiningEnabled", bMiningEnabled);
+            ApplyMiningSettings();
+            break;
+        case MiningIntensity:
+            nMiningIntensity = value.toInt();
+            settings.setValue("nMiningIntensity", nMiningIntensity);
+            ApplyMiningSettings();
             break;
         default:
             break;

@@ -527,6 +527,20 @@ bool GetBoolArg(const std::string& strArg, bool fDefault)
     return fDefault;
 }
 
+void SetArg(const std::string& strArg, const std::string& strValue)
+{
+    mapArgs[strArg].clear();
+    mapArgs[strArg] = strValue;
+}
+
+void SetBoolArg(const std::string& strArg, const bool boolValue)
+{
+    if (boolValue)
+        SetArg(strArg, std::string("1"));
+    else
+        SetArg(strArg, std::string("0"));
+}
+
 bool SoftSetArg(const std::string& strArg, const std::string& strValue)
 {
     if (mapArgs.count(strArg))
