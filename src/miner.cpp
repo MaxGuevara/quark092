@@ -481,29 +481,36 @@ void static BitcoinMiner(CWallet *pwallet)
     CReserveKey reservekey(pwallet);
     unsigned int nExtraNonce = 0;
     
-    try { while (true) {
-                
-        CBlockIndex* pindexPrev;
+    CBlockIndex* pindexPrev;
+        
+    if (Params().NetworkID() != CChainParams::REGTEST) 
+    {
+        // wait for start
+        pindexPrev = chainActive.Tip();
+        while ( vNodes.empty() ||
+                IsInitialBlockDownload() ||
+                pindexPrev == chainActive.Tip() )
+        {
+            MilliSleep(1000);
+            boost::this_thread::interruption_point();
+        }
+    }
     
+    try { while (true) {
+                    
         if (Params().NetworkID() != CChainParams::REGTEST) 
         {
             // Busy-wait for the network to come online so we don't waste time mining
             // on an obsolete chain. In regtest mode we expect to fly solo.
-            while (vNodes.empty())
-            {
-                MilliSleep(1000);
-                boost::this_thread::interruption_point();
-            }
-            // wait for chain
             int nTimeOut = 0;
             bool bDownloading;
-            pindexPrev = chainActive.Tip();
             while ( (bDownloading = (
+                        vNodes.empty() ||
                         IsInitialBlockDownload() ||
                         (pindexPrev != chainActive.Tip())
                         )) 
                     ||
-                    (GetTime() - pindexPrev->GetBlockTime() > 10 * 60) )
+                    (GetTime() - pindexPrev->GetBlockTime() > 5 * 60) )
             {
                 if (bDownloading)
                     nTimeOut = 0;
