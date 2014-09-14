@@ -77,7 +77,7 @@ private:
     bool bDisplayAddresses;
     QString strThirdPartyTxUrls;
     bool fCoinControlFeatures;
-    bool bMiningEnabled;
+    bool bAutoMiningEnabled;
     int nMiningIntensity;
     /* settings that were overriden by command-line */
     QString strOverriddenByCommandLine;

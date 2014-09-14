@@ -489,28 +489,30 @@ void static BitcoinMiner(CWallet *pwallet)
         {
             // Busy-wait for the network to come online so we don't waste time mining
             // on an obsolete chain. In regtest mode we expect to fly solo.
-            bool bOffline = false;
             while (vNodes.empty())
             {
                 MilliSleep(1000);
                 boost::this_thread::interruption_point();
-                bOffline = true;
-            }
-            if (bOffline)
-            {
-                // wait for block
-                pindexPrev = chainActive.Tip();
-                while ( pindexPrev == chainActive.Tip() )
-                {
-                    MilliSleep(100);
-                    boost::this_thread::interruption_point();
-                }
             }
             // wait for chain
+            int nTimeOut = 0;
+            bool bDownloading;
             pindexPrev = chainActive.Tip();
-            while ( IsInitialBlockDownload() ||
-                    (pindexPrev != chainActive.Tip()) )
+            while ( (bDownloading = (
+                        IsInitialBlockDownload() ||
+                        (pindexPrev != chainActive.Tip())
+                        )) 
+                    ||
+                    (GetTime() - pindexPrev->GetBlockTime() > 10 * 60) )
             {
+                if (bDownloading)
+                    nTimeOut = 0;
+                else
+                {
+                    nTimeOut++;
+                    if (nTimeOut > 5 * 60)
+                        break;
+                }
                 pindexPrev = chainActive.Tip();
                 MilliSleep(1000);
                 boost::this_thread::interruption_point();

@@ -39,8 +39,8 @@ void OptionsModel::addOverriddenOption(const std::string &option)
 void static ApplyMiningSettings()
 {
     QSettings settings;
-    if (settings.contains("bMiningEnabled"))
-        SetBoolArg("-gen", settings.value("bMiningEnabled").toBool());
+    if (settings.contains("bAutoMiningEnabled"))
+        SetBoolArg("-gen", settings.value("bAutoMiningEnabled").toBool());
     if (settings.contains("nMiningIntensity"))
         SetArg("-genproclimit", settings.value("nMiningIntensity").toString().toStdString());
     // stop
@@ -143,8 +143,8 @@ void OptionsModel::Init()
 
     // Mining disabled by default in QT if not overriden 
     // by command-line options
-    if (settings.contains("bMiningEnabled"))
-        SoftSetBoolArg("-gen", settings.value("bMiningEnabled").toBool());
+    if (settings.contains("bAutoMiningEnabled"))
+        SoftSetBoolArg("-gen", settings.value("bAutoMiningEnabled").toBool());
     else
         SoftSetBoolArg("-gen", false);
     if (settings.contains("nMiningIntensity"))
@@ -243,7 +243,7 @@ QVariant OptionsModel::data(const QModelIndex & index, int role) const
         case ThreadsScriptVerif:
             return settings.value("nThreadsScriptVerif");
         case MiningEnabled:
-            return settings.value("bMiningEnabled", GetBoolArg("-gen", false));
+            return settings.value("bAutoMiningEnabled", GetBoolArg("-gen", false));
         case MiningIntensity:
         {
             int lim = GetArg("-genproclimit", 0);
@@ -373,8 +373,8 @@ bool OptionsModel::setData(const QModelIndex & index, const QVariant & value, in
             }
             break;
         case MiningEnabled:
-            bMiningEnabled = value.toBool();
-            settings.setValue("bMiningEnabled", bMiningEnabled);
+            bAutoMiningEnabled = value.toBool();
+            settings.setValue("bAutoMiningEnabled", bAutoMiningEnabled);
             ApplyMiningSettings();
             break;
         case MiningIntensity:
