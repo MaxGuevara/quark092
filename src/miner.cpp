@@ -481,7 +481,7 @@ void static BitcoinMiner(CWallet *pwallet)
     CReserveKey reservekey(pwallet);
     unsigned int nExtraNonce = 0;
     
-    CBlockIndex* pindexPrev;
+    CBlockIndex* pindexPrev = NULL;
         
     if (Params().NetworkID() != CChainParams::REGTEST) 
     {
